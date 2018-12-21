@@ -1,5 +1,5 @@
 <template>
-  <div class="audio" :class="{'music-player-stop': cssplay}" @click="checkoutPlayStatus">
+  <div class="audio" :class="{'music-player-stop': cssplay}" @click="checkoutPlayStatus" v-show="!showAudio.show">
       <audio id="audio" style="display:none;" preload="auto" loop="loop" autoplay="autoplay"></audio> 
       <!-- preload loop autoplay -->
   </div>
@@ -8,6 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Bus from '../utils/Bus';
+import Store from '../utils/Store';
 
 @Component({
   components: {
@@ -22,6 +23,8 @@ export default class Audio extends Vue {
     private audio: any = null;
 
     private src: any = null;
+
+    private showAudio: boolean = Store.RankInfo
 
     private checkoutPlayStatus(): void {
         if(!this.audio){

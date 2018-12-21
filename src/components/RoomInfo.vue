@@ -47,7 +47,7 @@ export default class RoomInfo extends Vue {
   opacity: 0;
 }
   .userdesc {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     position: fixed;
     left: 0;
     top: 0;

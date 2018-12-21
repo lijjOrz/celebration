@@ -2,7 +2,7 @@
 <div class="young-box" v-cloak>
 <!-- 冲榜阶段 -->
 <transition name="fade">
-    <div class="young" v-if="this.isCreateGiftList == 0 && !ranhshow" style="height: 100%;background: #191136;">
+    <div class="young" v-if="this.isCreateGiftList == 0" style="height: 100%;background: #191136;">
         <div class="young-body">
 
             <div class="light-box">
@@ -69,10 +69,8 @@
                 <div class="prize-title pingfang-sc-bold">獎勵介紹</div>
                 <div class="kuang-box">
                     <img class="kuang" src="../../assets/kuang.png">
-                    <!-- 奖杯图片需要更换 -->
                     <img class="cup" :src="pageMsg.cupSrc">
                     <img class="goods" :src="pageMsg.src">
-                    
                 </div>
                 <div class="prize-text pingfang-sc-regular">{{pageMsg.prizeText}}</div>
             </div>
@@ -81,7 +79,7 @@
 </transition>
 <!-- 结果出来后 -->
 <transition name="fade">
-    <div class="youngResult" v-if="this.isCreateGiftList == 1 && !ranhshow">
+    <div class="youngResult" v-if="this.isCreateGiftList == 1">
        <div class="young_bg1 header">
         
            <div class="light-box">
@@ -105,7 +103,7 @@
                        <img :src="pageData.sendKd[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.sendKd[0].nickname}}</div>
-                            <div class="name-id">{{pageData.sendKd[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.sendKd[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -134,7 +132,7 @@
                        <img :src="pageData.receivedKd[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.receivedKd[0].nickname}}</div>
-                            <div class="name-id">{{pageData.receivedKd[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.receivedKd[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -147,7 +145,7 @@
                        <img :src="pageData.fans[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.fans[0].nickname}}</div>
-                            <div class="name-id">{{pageData.fans[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.fans[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -180,7 +178,7 @@
                        <img :src="pageData.giftMan[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.giftMan[0].nickname}}</div>
-                            <div class="name-id">{{pageData.giftMan[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.giftMan[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -193,7 +191,7 @@
                        <img :src="pageData.giftWoman[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.giftWoman[0].nickname}}</div>
-                            <div class="name-id">{{pageData.giftWoman[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.giftWoman[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -222,7 +220,7 @@
                        <img :src="pageData.lucky[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.lucky[0].nickname}}</div>
-                            <div class="name-id">{{pageData.lucky[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.lucky[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -238,7 +236,7 @@
                        <img :src="pageData.treasure[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.treasure[0].nickname}}</div>
-                            <div class="name-id">{{pageData.treasure[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.treasure[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -267,7 +265,7 @@
                        <img :src="pageData.bag[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.bag[0].nickname}}</div>
-                            <div class="name-id">{{pageData.bag[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.bag[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -279,7 +277,7 @@
                        <img :src="pageData.gold[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.gold[0].nickname}}</div>
-                            <div class="name-id">{{pageData.gold[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.gold[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -311,7 +309,7 @@
                        <img :src="pageData.task[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.task[0].nickname}}</div>
-                            <div class="name-id">{{pageData.task[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.task[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -323,7 +321,7 @@
                        <img :src="pageData.receivedGift[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.receivedGift[0].nickname}}</div>
-                            <div class="name-id">{{pageData.receivedGift[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.receivedGift[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -352,7 +350,7 @@
                        <img :src="pageData.accost[0].portrait" alt="">
                         <div>
                             <div class="name">{{pageData.accost[0].nickname}}</div>
-                            <div class="name-id">{{pageData.accost[0].userId}}</div>
+                            <div class="name-id">ID: {{pageData.accost[0].userId}}</div>
                         </div>
                    </div>
                </div>
@@ -530,7 +528,7 @@ export default class Young extends Vue {
 
     private refresh(): void {
         this.init().then((res)=>{
-             this.array = [
+            this.array = [
                 {title: '2018年奉獻王者',msg: '給其他小夥伴送禮總額最多', cupSrc: require('../../assets/first.png') ,src: require('../../assets/tou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Jarre AeroSkull Nano音箱', first: this.pageData.sendKd[0], second: this.pageData.sendKd[1], third: this.pageData.sendKd[2], rankname: "給其他小夥伴送禮"},
                 {title: '2018年實力偶像',msg: '收到其他小夥伴送禮總額最多', cupSrc: require('../../assets/first.png') ,src: require('../../assets/qing.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+恩雅X1C全單板32寸初學者尤克里里', first: this.pageData.receivedKd[0], second: this.pageData.receivedKd[1], third: this.pageData.receivedKd[2],rankname: "收到其他夥伴送禮"},
                 {title: '2018年度人氣王',msg: '收穫粉絲最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/dog.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Jarre AeroBull Nano音箱', first: this.pageData.fans[0], second: this.pageData.fans[1], third: this.pageData.fans[2], rankname: "粉絲數量"},
@@ -600,13 +598,13 @@ opacity: 0;
     z-index: 5;
 }
 .leftLight{
-    width: 50%;
+    width: 50% !important;
     height: 3.35rem;
     float: left;
     visibility: hidden;
 }
 .rightLight{
-    width: 50%;
+    width: 50% !important;
     height: 3.35rem;
     float: right;
     visibility: hidden;

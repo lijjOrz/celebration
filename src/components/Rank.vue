@@ -2,7 +2,7 @@
 <transition name="fadess">
     <div class="ranks" style="padding-bottom: 0;" v-if="data.show">
         <div class="warpper">
-            <p class="title" @click="quit">{{data.ranktitle?data.ranktitle:''}}</p>
+            <p class="title">{{data.ranktitle?data.ranktitle:''}}</p>
             <!-- 房间 -->
             <div v-if="data.type=='room'">
                 <div class="header1" >
@@ -122,11 +122,12 @@ export default class Youngrank extends Vue {
     .ranks {
         width: 100%;
         height: 100%;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         background: #11093c;
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
         z-index: 10;
     }
     

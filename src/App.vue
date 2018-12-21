@@ -12,25 +12,25 @@
 
       <div class="nav">
 
-        <router-link tag="span" to="/">
+        <router-link tag="span" to="/" replace>
         <div class="tab">
           <div class="tab-ctx">年度盛典</div>
         </div>
       </router-link>
 
-      <router-link tag="span" to="/young">
+      <router-link tag="span" to="/young" replace>
         <div class="tab">
           <div class="tab-ctx">傑出青年</div>
         </div>
       </router-link>
 
-      <router-link tag="span" to="/room">
+      <router-link tag="span" to="/room" replace>
         <div class="tab">
           <div class="tab-ctx">火爆房間</div>
         </div>
       </router-link>
 
-      <router-link tag="span" to="/about">
+      <router-link tag="span" to="/about" replace>
         <div class="tab">
           <div class="tab-ctx">頒獎典禮</div>
         </div>

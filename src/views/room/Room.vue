@@ -3,7 +3,7 @@
     <transition name="fade">
     
     
-    <div class="roompre" v-if="pageData.isCreateGiftList == 0 && !ranhshow.show"> 
+    <div class="roompre" v-show="pageData.isCreateGiftList == 0"> 
       <!-- style="display: none;" -->
       <div class="room1">
         
@@ -242,7 +242,7 @@
     </transition>
 
     <transition name="fade">
-    <div class="roomnext" v-if="pageData.isCreateGiftList == 1 && !ranhshow.show">
+    <div class="roomnext" v-show="pageData.isCreateGiftList == 1">
       <div class="roomnext1 roomnext11">
           
         <div class="light-box">
@@ -262,15 +262,15 @@
         <div class="roomrank">
           <div>
             <p style="width: 2.4rem;text-align: left">{{pageData.activity[0]?pageData.activity[0].name:''}}</p>
-            <p style="width: 1.4rem;">{{pageData.activity[0]?pageData.activity[0].roomCode:''}}</p>
+            <p style="width: 1.4rem;">房号: {{pageData.activity[0]?pageData.activity[0].roomCode:''}}</p>
           </div>
           <div>
             <p style="width: 2.4rem;text-align: left">{{pageData.activity[1]?pageData.activity[1].name:''}}</p>
-            <p style="width: 1.4rem;">{{pageData.activity[1]?pageData.activity[1].roomCode:''}}</p>
+            <p style="width: 1.4rem;">房号: {{pageData.activity[1]?pageData.activity[1].roomCode:''}}</p>
           </div>
           <div>
             <p style="width: 2.4rem;text-align: left">{{pageData.activity[2]?pageData.activity[2].name:''}}</p>
-            <p style="width: 1.4rem;">{{pageData.activity[2]?pageData.activity[2].roomCode:''}}</p>
+            <p style="width: 1.4rem;">房号: {{pageData.activity[2]?pageData.activity[2].roomCode:''}}</p>
           </div>
         </div>
         <div class="bottom">
@@ -289,16 +289,16 @@
         <p class="title">2018年度“天上人間”</p>
         <div class="roomrank1">
           <p>{{pageData.sendKd[0]?pageData.sendKd[0].name:''}}</p>
-          <p>{{pageData.sendKd[0]?pageData.sendKd[0].roomCode:''}}</p>
+          <p>房号: {{pageData.sendKd[0]?pageData.sendKd[0].roomCode:''}}</p>
         </div>
         <div class="roomrank23">
           <div>
             <p>{{pageData.sendKd[1]?pageData.sendKd[1].name:''}}</p>
-            <p>{{pageData.sendKd[1]?pageData.sendKd[1].roomCode:''}}</p>
+            <p>房号: {{pageData.sendKd[1]?pageData.sendKd[1].roomCode:''}}</p>
           </div>
           <div>
             <p>{{pageData.sendKd[2]?pageData.sendKd[2].name:''}}</p>
-            <p>{{pageData.sendKd[2]?pageData.sendKd[2].roomCode:''}}</p>
+            <p>房号: {{pageData.sendKd[2]?pageData.sendKd[2].roomCode:''}}</p>
           </div>
         </div>
         <div class="bottom">
@@ -318,15 +318,15 @@
         <div class="roomrank" style="margin-top: 0.3rem;">
           <div>
             <p style="width: 2.4rem;text-align: left">{{pageData.consume[0]?pageData.consume[0].name:''}}</p>
-            <p style="width: 1.4rem;">{{pageData.consume[0]?pageData.consume[0].roomCode:''}}</p>
+            <p style="width: 1.4rem;">房号: {{pageData.consume[0]?pageData.consume[0].roomCode:''}}</p>
           </div>
           <div>
             <p style="width: 2.4rem;text-align: left">{{pageData.consume[1]?pageData.consume[1].name:''}}</p>
-            <p style="width: 1.4rem;">{{pageData.consume[1]?pageData.consume[1].roomCode:''}}</p>
+            <p style="width: 1.4rem;">房号: {{pageData.consume[1]?pageData.consume[1].roomCode:''}}</p>
           </div>
           <div>
             <p style="width: 2.4rem;text-align: left">{{pageData.consume[2]?pageData.consume[2].name:''}}</p>
-            <p style="width: 1.4rem;">{{pageData.consume[2]?pageData.consume[2].roomCode:''}}</p>
+            <p style="width: 1.4rem;">房号: {{pageData.consume[2]?pageData.consume[2].roomCode:''}}</p>
           </div>
         </div>
         <div class="bottom">
@@ -346,7 +346,7 @@
             <p class="title">2018 年度<br />“幸運520”房間</p>
             <div class="roominfo">
               <p class="white-space">{{pageData.lucky[0]?pageData.lucky[0].name:''}}</p>
-              <p>{{pageData.lucky[0]?pageData.lucky[0].roomCode:''}}</p>
+              <p>房号: {{pageData.lucky[0]?pageData.lucky[0].roomCode:''}}</p>
               <img src="../../assets/cup.png" alt="" style="width:1.28rem;height: 1.16rem;margin:0.36rem auto">
             </div>
             <div class="rewardinfo">【大佬特權（黃金）1次】</div>
@@ -355,7 +355,7 @@
             <p class="title">2018 年度“風水寶地”</p>
             <div class="roominfo">
               <p class="white-space">{{pageData.lucky[0]?pageData.treasure[0].name:''}}</p>
-              <p>{{pageData.lucky[0]?pageData.treasure[0].roomCode:''}}</p>
+              <p>房号: {{pageData.lucky[0]?pageData.treasure[0].roomCode:''}}</p>
               <img src="../../assets/cup.png" alt="" style="width:1.28rem;height: 1.16rem;margin:0.36rem auto">
             </div>
             <div class="rewardinfo">【獲得指定投放金、銀、<br />銅寶箱特權各一次】</div>
@@ -498,8 +498,8 @@ export default class Rome extends Vue {
     position: absolute;
     top: 0;
     left: 0;
-    overflow-Y: auto;
-    overflow-X: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     background:url('../../assets/young_bg5.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -561,7 +561,7 @@ export default class Rome extends Vue {
     visibility: hidden;
 }
 .visibility{
-  visibility: visible;
+  visibility: visible !important;
 }
 
   @import "./roompre.scss";

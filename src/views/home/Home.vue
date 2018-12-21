@@ -23,7 +23,7 @@
 
 
 
-                        <div class="home-logo" ref="homelogo"></div>
+                        <div class="home-logo"></div>
                         
                         
 
@@ -245,8 +245,9 @@ export default class Home extends Vue {
             loop: true,
         });
         Velocity.animate(this.$refs.smbox as HTMLElement, {
-            height: '0.91rem',
-            scaleX: 1.3,
+            // height: '0.91rem',
+            // scaleX: 1.3,
+            scale: 1.3,
         }, {
             duration: 300,
             loop: true,
@@ -280,12 +281,14 @@ export default class Home extends Vue {
             loop: true,
         });
         Velocity.animate(this.$refs.Rsmbox as HTMLElement, {
-            height: '0.91rem',
-            scaleX: 1.3,
+            // height: '0.91rem',
+            // scaleX: 1.3,
+            scale: 1.3,
         }, {
             duration: 300,
             loop: true,
         });
+
 
     }
 
@@ -312,7 +315,7 @@ export default class Home extends Vue {
   position: absolute;
   top: 0;
   left: 0;
-    overflow-x: hidden;
+    overflow-X: hidden;
 }
 .home > div {
     padding-bottom: 0.8rem;
@@ -337,7 +340,6 @@ export default class Home extends Vue {
     left: 0;
     top: 0 ;
     z-index: 5;
-    // opacity: 0.1;
 }
 .leftLight{
     width: 50%;
@@ -351,6 +353,8 @@ export default class Home extends Vue {
     float: right;
     visibility: hidden;
 }
+
+
 
 
 .m-box{
@@ -408,7 +412,8 @@ export default class Home extends Vue {
     right: 0.05rem;
     bottom: 0.88rem;
     margin-top: -0.7rem;
-    z-index: 3;
+    z-index: 4;
+    transform-origin: 50% 100% 0;
 }
 
 // 大箱子
@@ -461,13 +466,9 @@ export default class Home extends Vue {
     top: -0.3rem;
     left: 0;
     z-index: 2;
+    // opacity: 0.01;
 }
 
-.fhjdskfhjd{
-    background:url("/stage_0");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
 
 .visibility{
     visibility: visible !important;

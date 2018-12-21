@@ -4,7 +4,7 @@ import Home from './views/home/Home.vue';
 import Room from './views/room/Room.vue';
 import Young from './views/young/Young.vue';
 import About from './views/about/About.vue';
-
+import Store from './utils/Store';
 Vue.use(Router);
 
 const routers = new Router({

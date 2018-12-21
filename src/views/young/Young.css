@@ -4,8 +4,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    overflow-Y: auto;
-    overflow-X: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     /* background: #150f35; */
     background:url('../../assets/young_bg5.jpg');
     background-repeat: no-repeat;

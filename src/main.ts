@@ -31,7 +31,7 @@ let vm = new Vue({
 
 const goBack = 'goBack';
 (window as any)[goBack] = () => {
-  
+
   if (vm.$route.path == '/'){            // 首页，直接关闭
     Hybird.finish();
   } else if(vm.$route.path == '/about') { // 关于页面，导航到首页
