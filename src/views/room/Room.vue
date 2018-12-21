@@ -498,7 +498,8 @@ export default class Rome extends Vue {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: auto;
+    overflow-Y: auto;
+    overflow-X: hidden;
     background:url('../../assets/young_bg5.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;

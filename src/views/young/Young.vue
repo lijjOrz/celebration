@@ -68,10 +68,11 @@
             <div class="prize-box">
                 <div class="prize-title pingfang-sc-bold">獎勵介紹</div>
                 <div class="kuang-box">
-                    <img class="kuang" src="../../assets/kuang.png" alt="">
+                    <img class="kuang" src="../../assets/kuang.png">
                     <!-- 奖杯图片需要更换 -->
-                    <img class="cup" src="../../assets/first.png" alt="">
+                    <img class="cup" :src="pageMsg.cupSrc">
                     <img class="goods" :src="pageMsg.src">
+                    
                 </div>
                 <div class="prize-text pingfang-sc-regular">{{pageMsg.prizeText}}</div>
             </div>
@@ -529,19 +530,19 @@ export default class Young extends Vue {
 
     private refresh(): void {
         this.init().then((res)=>{
-            this.array = [
-                {title: '2018年奉獻王者',msg: '給其他小夥伴送禮總額最多', src: require('../../assets/tou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Jarre AeroSkull Nano音箱', first: this.pageData.sendKd[0], second: this.pageData.sendKd[1], third: this.pageData.sendKd[2], rankname: "給其他小夥伴送禮"},
-                {title: '2018年實力偶像',msg: '收到其他小夥伴送禮總額最多', src: require('../../assets/qing.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+恩雅X1C全單板32寸初學者尤克里里', first: this.pageData.receivedKd[0], second: this.pageData.receivedKd[1], third: this.pageData.receivedKd[2],rankname: "收到其他夥伴送禮"},
-                {title: '2018年度人氣王',msg: '收穫粉絲最多的小夥伴', src: require('../../assets/dog.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Jarre AeroBull Nano音箱', first: this.pageData.fans[0], second: this.pageData.fans[1], third: this.pageData.fans[2], rankname: "粉絲數量"},
-                {title: '2018年度“老司機”',msg: '收到“老司雞”禮物个数最多的小夥伴', src: require('../../assets/fei.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Tello無人機航拍飛行器', first: this.pageData.giftMan[0], second: this.pageData.giftMan[1], third: this.pageData.giftMan[2], rankname: "收到“老司雞”個數"},
-                {title: '2018年度“最佳小甜心”',msg: '收到“比心心”禮物个数最多的小夥伴', src: require('../../assets/shu.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+聞綺金屬書魚子醬狀巧克力禮盒', first: this.pageData.giftWoman[0], second: this.pageData.giftWoman[1], third: this.pageData.giftWoman[2], rankname: "收到“比心心”個數"},
-                {title: '2018年度“錦鯉”',msg: '爆520倍次數最多的小夥伴', src: require('../../assets/hongshou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+周大生黃金錦鯉轉運珠', first: this.pageData.lucky[0], second: this.pageData.lucky[1], third: this.pageData.lucky[2], rankname: "爆豆520倍總次數"},
-                {title: '2018年度“寶箱之王”',msg: '觸發寶箱次數最多的小夥伴（不區分寶箱類型）', src: require('../../assets/tu.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+聞綺尊貴魚子醬狀巧克力禮盒', first: this.pageData.treasure[0], second: this.pageData.treasure[1], third: this.pageData.treasure[2], rankname: "觸發寶箱次數"},
-                {title: '2018年度“收藏家”',msg: '擁有2018年官方活動所涉及個性裝扮最多的小夥伴（不區分類型）', src: require('../../assets/duizi.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+2019黃金典藏版故宮日曆', first: this.pageData.bag[0], second: this.pageData.bag[1], third: this.pageData.bag[2], rankname: "活動個性裝扮個數"},
-                {title: '2018 年度“黃金手”',msg: '搶寶箱次數最多的小夥伴（不區分寶箱類型）', src: require('../../assets/heishou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+周大福足金貔貅玉髓手鏈', first: this.pageData.gold[0], second: this.pageData.gold[1], third: this.pageData.gold[2], rankname: "搶寶箱次數"},
-                {title: '2018年度任務之王',msg: '完成任務數最多的小夥伴', src: require('../../assets/ren.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Blue sky studios星球大戰白兵頭盔音箱', first: this.pageData.task[0], second: this.pageData.task[1], third: this.pageData.task[2], rankname: "完成任務總數"},
-                {title: '2018年度團寵',msg: '被最多小夥伴送禮的人（不包含私聊禮物）', src: require('../../assets/ren2.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+飛利浦AW6005A藍牙無線阿里ai智能音箱', first: this.pageData.receivedGift[0], second: this.pageData.receivedGift[1], third: this.pageData.receivedGift[2], rankname: "贈禮人數"},
-                {title: '2018年度”搭訕王”',msg: '私聊禮物送出個數最多的小夥伴', src: require('../../assets/bei.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+The Beast野獸派 馬克對杯', first: this.pageData.accost[0], second: this.pageData.accost[1], third: this.pageData.accost[2], rankname: "私聊送出禮物個數"},
+             this.array = [
+                {title: '2018年奉獻王者',msg: '給其他小夥伴送禮總額最多', cupSrc: require('../../assets/first.png') ,src: require('../../assets/tou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Jarre AeroSkull Nano音箱', first: this.pageData.sendKd[0], second: this.pageData.sendKd[1], third: this.pageData.sendKd[2], rankname: "給其他小夥伴送禮"},
+                {title: '2018年實力偶像',msg: '收到其他小夥伴送禮總額最多', cupSrc: require('../../assets/first.png') ,src: require('../../assets/qing.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+恩雅X1C全單板32寸初學者尤克里里', first: this.pageData.receivedKd[0], second: this.pageData.receivedKd[1], third: this.pageData.receivedKd[2],rankname: "收到其他夥伴送禮"},
+                {title: '2018年度人氣王',msg: '收穫粉絲最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/dog.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Jarre AeroBull Nano音箱', first: this.pageData.fans[0], second: this.pageData.fans[1], third: this.pageData.fans[2], rankname: "粉絲數量"},
+                {title: '2018年度“老司機”',msg: '收到“老司雞”禮物个数最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/fei.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Tello無人機航拍飛行器', first: this.pageData.giftMan[0], second: this.pageData.giftMan[1], third: this.pageData.giftMan[2], rankname: "收到“老司雞”個數"},
+                {title: '2018年度“最佳小甜心”',msg: '收到“比心心”禮物个数最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/shu.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+聞綺金屬書魚子醬狀巧克力禮盒', first: this.pageData.giftWoman[0], second: this.pageData.giftWoman[1], third: this.pageData.giftWoman[2], rankname: "收到“比心心”個數"},
+                {title: '2018年度“錦鯉”',msg: '爆520倍次數最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/hongshou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+周大生黃金錦鯉轉運珠', first: this.pageData.lucky[0], second: this.pageData.lucky[1], third: this.pageData.lucky[2], rankname: "爆豆520倍總次數"},
+                {title: '2018年度“寶箱之王”',msg: '觸發寶箱次數最多的小夥伴（不區分寶箱類型）', cupSrc: require('../../assets/first.png') ,src: require('../../assets/tu.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+聞綺尊貴魚子醬狀巧克力禮盒', first: this.pageData.treasure[0], second: this.pageData.treasure[1], third: this.pageData.treasure[2], rankname: "觸發寶箱次數"},
+                {title: '2018年度“收藏家”',msg: '擁有2018年官方活動所涉及個性裝扮最多的小夥伴（不區分類型）', cupSrc: require('../../assets/first.png') ,src: require('../../assets/duizi.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+2019黃金典藏版故宮日曆', first: this.pageData.bag[0], second: this.pageData.bag[1], third: this.pageData.bag[2], rankname: "活動個性裝扮個數"},
+                {title: '2018 年度“黃金手”',msg: '搶寶箱次數最多的小夥伴（不區分寶箱類型）', cupSrc: require('../../assets/first.png') ,src: require('../../assets/heishou.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+周大福足金貔貅玉髓手鏈', first: this.pageData.gold[0], second: this.pageData.gold[1], third: this.pageData.gold[2], rankname: "搶寶箱次數"},
+                {title: '2018年度任務之王',msg: '完成任務數最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/ren.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+Blue sky studios星球大戰白兵頭盔音箱', first: this.pageData.task[0], second: this.pageData.task[1], third: this.pageData.task[2], rankname: "完成任務總數"},
+                {title: '2018年度團寵',msg: '被最多小夥伴送禮的人（不包含私聊禮物）', cupSrc: require('../../assets/first.png') ,src: require('../../assets/ren2.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+飛利浦AW6005A藍牙無線阿里ai智能音箱', first: this.pageData.receivedGift[0], second: this.pageData.receivedGift[1], third: this.pageData.receivedGift[2], rankname: "贈禮人數"},
+                {title: '2018年度”搭訕王”',msg: '私聊禮物送出個數最多的小夥伴', cupSrc: require('../../assets/first.png') ,src: require('../../assets/bei.png'), prizeText: '“傑出青年”面板+28888K豆+水晶獎盃+The Beast野獸派 馬克對杯', first: this.pageData.accost[0], second: this.pageData.accost[1], third: this.pageData.accost[2], rankname: "私聊送出禮物個數"},
             ];
             this.pageMsg = this.array[0];//初始化默认数
 

@@ -29,7 +29,7 @@
 
                         <div class="home-stage">
                             <img src="/stage_1.png" :class="{visibility: this.imageShow == 0}">
-                        </div> -->
+                        </div>
                         <div class="home-stage">
                             <img src="/stage_2.png" :class="{visibility: this.imageShow == 1}">
                         </div>
@@ -245,7 +245,8 @@ export default class Home extends Vue {
             loop: true,
         });
         Velocity.animate(this.$refs.smbox as HTMLElement, {
-            scale: 1.3,
+            height: '0.91rem',
+            scaleX: 1.3,
         }, {
             duration: 300,
             loop: true,
@@ -279,7 +280,8 @@ export default class Home extends Vue {
             loop: true,
         });
         Velocity.animate(this.$refs.Rsmbox as HTMLElement, {
-            scale: 1.3,
+            height: '0.91rem',
+            scaleX: 1.3,
         }, {
             duration: 300,
             loop: true,
@@ -404,7 +406,9 @@ export default class Home extends Vue {
     background-size: 100% 100%;
     position: absolute;
     right: 0.05rem;
-    bottom: 0.86rem;
+    bottom: 0.88rem;
+    margin-top: -0.7rem;
+    z-index: 3;
 }
 
 // 大箱子
@@ -418,7 +422,6 @@ export default class Home extends Vue {
     right: 0;
     bottom: 0;
     padding-top: 0.15rem;
-    z-index: 4;
 }
 .b-mbox .eye-l{
     width: 0.2rem;

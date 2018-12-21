@@ -4,7 +4,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    overflow: auto;
+    overflow-Y: auto;
+    overflow-X: hidden;
     /* background: #150f35; */
     background:url('../../assets/young_bg5.jpg');
     background-repeat: no-repeat;
@@ -41,7 +42,7 @@
     box-align:center;
 }
 .young-nav{
-    width: 6.0rem;
+    width: 6.2rem;
     height: 1.38rem;
     margin: 0 auto;
     margin-top: 0.7rem;
@@ -50,7 +51,7 @@
 }
 .young-nav li{
     list-style: none;
-    width: 1.24rem;
+    width: 1.29rem;
     height: 0.4rem;
     margin: 0.06rem 0.13rem 0 0.13rem;
     float: left;
