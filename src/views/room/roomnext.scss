@@ -1,0 +1,281 @@
+.roomnext11 {
+    width: 100%;
+    height: 9.8rem;
+    background: url('../../assets/roomnext_1.jpg');
+    background-size: cover;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.roomnext2 {
+    width: 100%;
+    height: 8.1rem;
+    background: url('../../assets/roomnext_2.jpg');
+    background-size: cover;
+}
+
+.roomnext3 {
+    width: 100%;
+    height: 7.16rem;
+    background: url('../../assets/roomnext_3.jpg');
+    background-size: cover;
+}
+
+.roomnext4 {
+    width: 100%;
+    height: 6.9rem;
+    background: url('../../assets/roomnext_4.jpg');
+    background-size: cover;
+}
+
+.roomnext1 {
+    p.title {
+        font-size: 0.28rem;
+        color: #2bd3fe;
+        font-weight: 700;
+        font-family: "PingFang_SC_Heavy, Arial, sans-serif";
+        height: 4.1rem;
+        padding-top: 3.46rem;
+        line-height: 0.64rem;
+    }
+    .roomrank {
+        height: 2.4rem;
+        width: 100%;
+        padding-left: 2.1rem;
+        margin-top: 0.34rem;
+        div {
+            width: 4.34rem;
+            height: 0.8rem;
+            display: -webkit-box;
+            -webkit-box-align: center;
+            -webkit-box-pack: justify;
+            p {
+                text-align: right;
+                line-height: 0.8rem;
+                color: #2bd3fe;
+                font-size: 0.24rem;
+                font-family: "PingFang_SC_Medium, Arial, sans-serif";
+                text-overflow: ellipsis;
+                word-break:keep-all;
+                white-space:nowrap;
+                overflow:hidden;
+            }
+        }
+    }
+    .bottom {
+        width: 5.68rem;
+        height: 2.1rem;
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        margin: 0.06rem auto 0 auto;
+
+        .left {
+            display: -webkit-box;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            margin-right: 0.16rem;
+
+            .rewardcup {
+                width: 1rem;
+                height: 0.88rem;
+                margin-right: 0.2rem;
+            }
+
+            .rewardbook {
+                width: 1.1rem;
+                height: 1.3rem;
+            }
+        }
+
+        .right {
+            display: -webkit-box;
+            // -webkit-box-align: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-pack: center;
+            height: 100%;
+            width: 2.84rem;
+
+            p {
+                line-height: 0.28rem;
+                font-size: 0.2rem;
+                color: #d1ccf8;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.roomnext2 {
+    color: #2bd3fe;
+    p.title {
+        font-size: 0.28rem;
+        font-weight: 700;
+        font-family: "PingFang_SC_Heavy, Arial, sans-serif";
+        height: 1.42rem;
+        padding-top: 0.8rem;
+        line-height: 0.64rem;
+    }
+    .roomrank1 {
+        height: 0.72rem;
+        width: 2rem;
+        margin-top: 0.5rem;
+        margin-left: 3.16rem;       
+        display: -webkit-box;
+        -webkit-box-align: cneter;
+        -webkit-box-pack: start;
+        -webkit-box-orient: vertical;
+        font-size: 0.28rem;
+        p {
+            text-align: left;
+            text-overflow: ellipsis;
+            word-break:keep-all;
+            white-space:nowrap;
+            overflow:hidden;
+        }
+    }
+    .roomrank23 {
+        width: 6.23rem;
+        height: 0.72rem;
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: justify;
+        font-size: 0.28rem;
+        margin: 0.7rem auto 0 auto;
+        div {
+            height: 100%;
+            width: 2.9rem;
+            padding-left: 0.8rem;
+            p {
+                text-align: left;
+                text-overflow: ellipsis;
+                word-break:keep-all;
+                white-space:nowrap;
+                overflow:hidden;
+            }
+        }
+    }
+    .bottom {
+        width: 5.68rem;
+        height: 2.24rem;
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        margin: 0.84rem auto 0 auto;
+
+        .left {
+            display: -webkit-box;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            margin-right: 0.16rem;
+
+            .rewardcup {
+                width: 1.28rem;
+                height: 1.16rem;
+                // margin-right: 0.2rem;
+            }
+
+            // .rewardbook {
+            //   width: 1.1rem;
+            //   height: 1.3rem;
+            // }
+        }
+
+        .right {
+            display: -webkit-box;
+            // -webkit-box-align: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-pack: center;
+            height: 100%;
+            width: 3.76rem;
+
+            p {
+                line-height: 0.28rem;
+                font-size: 0.2rem;
+                color: #d1ccf8;
+                text-align: left;
+            }
+        }
+    }
+}
+.roomnext4 {
+    
+    .warpper {
+        width: 100%;
+        height: 100%;
+        width: 6.6rem;
+        margin: 0 auto;
+        display: -webkit-box;
+        -webkit-box-pack: justify;
+        -webkit-box-align: start;
+        .left{
+            width: 3.2rem;
+            height: 5.2rem;
+            font-size: 0.24rem;
+            color: #2bd3fe;
+            position: relative;
+            p.title {
+                
+                // height: 0.6rem;
+                line-height: 0.3rem;
+                padding-top: 0.8rem;
+            }
+            .roominfo {
+                width: 100%;
+                // height: 100%;
+                margin-top: 0.5rem;
+                p {
+                    line-height: 0.3rem;
+                    height: 0.3rem;
+                }
+            }
+            .rewardinfo {
+                font-size: 0.2rem;
+                color: #6a5cb8;
+                width: 100%;
+                height: 0.76rem;
+                position: absolute;
+                bottom: 0.16rem;margin: 0 auto;
+                display: -webkit-box;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+            }
+        }
+        .right {
+            width: 3.2rem;
+            height: 5.2rem;
+            font-size: 0.24rem;
+            color: #2bd3fe;
+            position: relative;
+            p.title {
+                // height: 0.6rem;
+                line-height: 0.6rem;
+                padding-top: 0.8rem;
+            }
+
+            .roominfo {
+                width: 100%;
+                // height: 100%;
+                margin-top: 0.5rem;
+
+                p {
+                    line-height: 0.3rem;
+                    height: 0.3rem;
+                }
+            }
+            .rewardinfo {
+                font-size: 0.2rem;
+                color: #6a5cb8;
+                width: 100%;
+                height: 0.76rem;
+                position: absolute;
+                bottom: 0.16rem;
+                margin: 0 auto;
+                display: -webkit-box;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+            }
+        }
+    }
+}

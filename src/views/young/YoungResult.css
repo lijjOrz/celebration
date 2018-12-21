@@ -1,0 +1,185 @@
+/* 排行结果出来后 */
+
+.young_bg1{
+    height: 13.04rem;
+    width: 100%;
+    padding-top: 3.44rem;
+    background:url("../../assets/young_bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.young_bg2{
+    width: 100%;
+    height: 10rem;
+    background:url("../../assets/young_bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.young_bg3{
+    height: 10.06rem;
+    width: 100%;
+    background:url("../../assets/young_bg4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.young_bg4{
+    height: 11.46rem;
+    width: 100%;
+    background:url("../../assets/young_bg5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* id在左边的框框 */
+.left-box{
+    width: 6.11rem;
+    height: 2.98rem;
+    margin: 0 auto;
+    margin-bottom: 0.32rem;
+    background:url("../../assets/young1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 0;
+    text-align: start;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.padding-top{
+    padding-top: 0.7rem !important;
+}
+.margin-left{
+    margin-left: 0.12rem !important;
+}
+.padding-right{
+    padding-right: 0.1rem;
+}
+.padding-left{
+    padding-left: 0.1rem;
+}
+.padding-top-32{
+    padding-top: 0.32rem
+}
+.padding-top-24{
+    padding-top: 0.24rem;
+}
+.padding-top-10{
+    padding-top: 0.1rem;
+}
+
+.head-id{
+    width: 3rem;
+    height: 2.98rem;
+    padding-top: 0.5rem;
+}
+.left-box:after{
+    content:"";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+}
+.head-id-title{
+    width: 2.5rem;
+    height: 0.55rem;
+    font-size: 0.24rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.55rem;
+    margin-left: 0.46rem;
+    margin-bottom: 0.5rem;
+}
+
+.head-id-img{
+    width: 2.4rem;
+    height: 0.8rem;
+    margin: 0 auto;
+    font-size: 0;
+
+    display:-webkit-box;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-align:center;
+}
+.head-id-img div{
+    font-size: 0.24rem;
+    color: #d1cdf3;
+    text-align: start;
+}
+.head-id-img img{
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    margin-right: 0.16rem;
+}
+.head-id-img .name{
+    max-width: 1.44rem;
+    margin-bottom: 0.1rem;
+    /* 超出省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cup-info{
+    width: 3.11rem;
+    height: 2.98rem;
+    padding-top: 0.25rem;
+}
+.cup-info-title{
+    font-size: 0.24rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.1rem;
+}
+.cup-info-img{
+    width: 100%;
+    height: 1.05rem;
+    
+    /* Safari, Chrome, and Opera */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+.cup-info-img > img:nth-child(1){
+    display: block;
+    width: 1.5rem;
+    height: 1rem;
+}
+.cup-info-img > img:nth-child(2){
+    display: block;
+    width: 1rem;
+    height: 0.88rem;
+}
+.cup-info-text{
+    font-size: 0.24rem;
+    color: #d1cdf3;
+    text-align: center;
+}
+
+ /* id在右边的框框 */
+.right-box{
+    width: 6.11rem;
+    height: 2.98rem;
+    margin: 0 auto;
+    margin-bottom: 0.32rem;
+    background:url("../../assets/young2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 0;
+    text-align: start;
+}

@@ -1,0 +1,119 @@
+### 注意
+#### 基于tag构建
+#### docker image 版本号修改为gitlab pipeline ID
+#### 构建生成的附件保留1星期
+
+ 
+stages:
+  - build
+  - deploy
+
+
+variables:
+  REGISTRY_USER: bot
+  REGISTRY_PWD: Bot12345
+  DOCER_REJISTRY: reg.haochang.tv
+  DOCKER_IMAGE: ${DOCER_REJISTRY}/base/node:8-alpine
+
+
+#cache:
+#  untracked: true
+#  #key: "$CI_BUILD_REF_NAME"
+#  paths:
+#    - node_modules/
+#    - bin/
+
+.tags_except: 
+  except:
+    - &dev_tag /^((?!dev).)*$/
+    - &test_tag /^((?!test).)*$/
+    - &stable_tag /^((?!stable).)*$/
+
+# build app and docker image    
+.build: &build
+  stage: build
+  before_script:
+    - export VOLUME_PATH=/data/gitlab-haochang-tv/gitlab-runner-home
+    - export CODE_PATH=$(echo $PWD|awk -F'[/]' '{print $4 "/" $5 "/" $6 "/" $7 "/" $8}') 
+    - docker login -u ${REGISTRY_USER} -p ${REGISTRY_PWD} ${DOCER_REJISTRY}
+    - docker run --rm -i -v ${VOLUME_PATH}/${CODE_PATH}:/${CI_PROJECT_PATH} -w /${CI_PROJECT_PATH} ${DOCKER_IMAGE} npm install
+  script:
+    - &build_image docker build -t ${DOCER_REJISTRY}/library/${CI_PROJECT_PATH}/nginx:${CI_PIPELINE_ID} .
+    - &push_image docker push ${DOCER_REJISTRY}/library/${CI_PROJECT_PATH}/nginx:${CI_PIPELINE_ID}
+  only:
+    - tags
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - bin
+
+build:dev:
+  <<: *build
+  script:
+    - docker run --rm -i -v ${VOLUME_PATH}/${CODE_PATH}:/${CI_PROJECT_PATH} -w /${CI_PROJECT_PATH} -e NODE_ENV=build_dev ${DOCKER_IMAGE} npm run build_dev
+    - *build_image
+    - *push_image
+  except:
+    - *dev_tag
+
+build:test:
+  <<: *build
+  script:
+    - docker run --rm -i -v ${VOLUME_PATH}/${CODE_PATH}:/${CI_PROJECT_PATH} -w /${CI_PROJECT_PATH} -e NODE_ENV=test ${DOCKER_IMAGE} npm run build_test
+    - *build_image
+    - *push_image
+  except:
+    - *test_tag
+
+build:stable:
+  <<: *build
+  script:
+    - docker run --rm -i -v ${VOLUME_PATH}/${CODE_PATH}:/${CI_PROJECT_PATH} -w /${CI_PROJECT_PATH} -e NODE_ENV=production ${DOCKER_IMAGE} npm run build_pro
+    - *build_image
+    - *push_image
+  except:
+    - *stable_tag
+
+# deploy app
+.deploy: &deploy
+  stage: deploy
+  script:
+    - envsubst < stack.yaml | kubectl apply -f - -n ${NAMESPACE}
+  environment: &environment
+    # e.g: https://dev-gameroom-api.haochang.tv
+    url: https://${CI_ENVIRONMENT_NAME}-${CI_PROJECT_PATH_SLUG}.haochang.tv
+  only:
+    - tags
+
+deploy:dev:
+  <<: *deploy
+  variables:
+    NAMESPACE: dev
+  environment:
+    <<: *environment
+    name: dev
+  except:
+    - *dev_tag
+  when: on_success
+    
+deploy:test:
+  <<: *deploy
+  variables:
+    NAMESPACE: test
+  environment:
+    <<: *environment
+    name: test
+  except:
+    - *test_tag
+  when: manual
+
+deploy:stable:
+  <<: *deploy
+  variables:
+    NAMESPACE: stable
+  environment:
+    <<: *environment
+    name: stable
+  except:
+    - *stable_tag
+  when: manual
